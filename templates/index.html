@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Face Recognition</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            display: flex;
+        }
+        .sidebar {
+            width: 200px;
+            height: 100vh;
+            background: #333;
+            color: white;
+            padding: 20px;
+            position: fixed;
+        }
+        .sidebar h2 {
+            text-align: center;
+        }
+        .sidebar ul {
+            list-style: none;
+            padding: 0;
+        }
+        .sidebar ul li {
+            padding: 10px;
+            margin: 10px 0;
+            background: #444;
+            text-align: center;
+            cursor: pointer;
+        }
+        .sidebar ul li:hover {
+            background: #555;
+        }
+        .content {
+            margin-left: 220px;
+            padding: 20px;
+            flex-grow: 1;
+        }
+    </style>
+</head>
+<body>
+    <div class="sidebar">
+        <h2>Menu</h2>
+        <ul>
+            <li>Home</li>
+            <li>Live Feed</li>
+            <li>Settings</li>
+            <li>Logout</li>
+        </ul>
+    </div>
+    <div class="content">
+        <h1>Real-Time Face Recognition</h1>
+        <img src="{{ url_for('video_feed') }}" width="640" height="480">
+        <h2>Recognition Accuracy</h2>
+        <p>Accuracy: <strong>{{ accuracy }}%</strong></p>
+    </div>
+</body>
+</html>
